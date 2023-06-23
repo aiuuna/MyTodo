@@ -12,14 +12,29 @@ namespace ConsoleApp1
         public string? Name { get; set; }
         public bool IsComplete { get; set; }
         public string? Secret { get; set; }
+        public TodoItem() { }
+        public TodoItem(long id,string? n,bool ic, string s) 
+        { 
+            Id= id;
+            Name= n;
+            IsComplete= ic;
+            Secret= s;
+        }
     }
-    public class TodoItemDTO
+    public class TodoItemDto
     {
         public long Id { get; set; }
         public string? Name { get; set; }
         public bool IsComplete { get; set; }
+        public TodoItemDto() { }
+        public TodoItemDto (TodoItem todoItem) 
+        { 
+            Id= todoItem.Id; 
+            Name= todoItem.Name;
+            IsComplete = todoItem.IsComplete;
+        }
     }
-    public class TodoDO
+    /*public class TodoDO
     {
         public static TodoItem ConvertToEntity(
             TodoItem
@@ -30,6 +45,5 @@ namespace ConsoleApp1
             Td.Name = TodoItemDTO.Name;
             Td.IsComplete = TodoItemDTO.IsComplete;
             return Td;
-        }
-    }
+        }*/
 }
