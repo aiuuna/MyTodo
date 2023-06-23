@@ -17,8 +17,8 @@ namespace Laba
         {
              List<TodoItem> lists = new List<TodoItem>()
              {
-                new TodoItem (1, "Aiuuna ", true, " j"),
-                new TodoItem (2, "Anna ", true, " j")
+                new TodoItem (1, "Aiuuna ", true, "secret"),
+                new TodoItem (2, "Anna ", true, "secret")
              };
              List<TodoItemDto> dtolists = new List<TodoItemDto>();
 
@@ -31,7 +31,10 @@ namespace Laba
                 TodoItemDto request = new TodoItemDto(todo);
                 dtolists.Add(request);
                 Console.WriteLine($"Id: {todo.Id}, \tName: {todo.Name}, \tIsComplete: {todo.IsComplete}");
-                Console.WriteLine($" {JsonSerializer.Serialize(todo).ToString()}");
+            }
+            foreach (TodoItemDto item in dtolists)
+            {
+                Console.WriteLine(JsonSerializer.Serialize(item).ToString());
             }
         }
 
