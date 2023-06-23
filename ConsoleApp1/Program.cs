@@ -22,15 +22,15 @@ namespace Laba
              };
              List<TodoItemDto> dtolists = new List<TodoItemDto>();
 
-            foreach (TodoItem element in lists)
+            foreach (TodoItem item in lists)
             {
-                Console.WriteLine($"Id: {element.Id}, \tName: {element.Name}, \tIsComplete:{element.IsComplete}, \tSecret?: {element.Secret}");
+                Console.WriteLine($"Id: {item.Id}, \tName: {item.Name}, \tIsComplete:{item.IsComplete}, \tSecret?: {item.Secret}");
             }
-            foreach (TodoItem todo in lists)
+            foreach (TodoItem item in lists)
             {
-                TodoItemDto request = new TodoItemDto(todo);
+                TodoItemDto request = new TodoItemDto(item);
                 dtolists.Add(request);
-                Console.WriteLine($"Id: {todo.Id}, \tName: {todo.Name}, \tIsComplete: {todo.IsComplete}");
+                Console.WriteLine($"Id: {item.Id}, \tName: {item.Name}, \tIsComplete: {item.IsComplete}");
             }
             foreach (TodoItemDto item in dtolists)
             {
